@@ -225,6 +225,12 @@ void BLELocalCharacteristic::writeValue(BLEDevice device, const uint8_t value[],
   }
 }
 
+void BLELocalCharacteristic::writeCccd(uint16_t value)
+{
+  value &= 0x0003;
+  _cccdValue = value;
+}
+
 void BLELocalCharacteristic::writeCccdValue(BLEDevice device, uint16_t value)
 {
   value &= 0x0003;
