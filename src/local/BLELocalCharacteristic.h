@@ -49,8 +49,6 @@ public:
   int writeValue(const uint8_t value[], int length);
   int writeValue(const char* value);
 
-  void writeCccd(uint16_t value);
-
   int broadcast();
 
   bool written();

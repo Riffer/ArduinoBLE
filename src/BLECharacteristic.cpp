@@ -469,11 +469,6 @@ bool BLECharacteristic::canSubscribe()
 
 bool BLECharacteristic::subscribe()
 {
-  if (_local) {
-    _local->writeCccd(0x0001);
-    return true;
-  }
-
   if (_remote) {
     return _remote->writeCccd((properties() & BLEIndicate) ? 0x0002 : 0x0001);
   }
